@@ -7,13 +7,12 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text("Notes",
-            strutStyle: StrutStyle(
+            style: TextStyle(
               fontSize: 28,
             )),
+        Spacer(),
         Custonserch()
       ],
     );
