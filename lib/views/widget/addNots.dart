@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:notesapp/views/widget/customBatten.dart';
 import 'package:notesapp/views/widget/customTextFiles.dart';
 
 class AddNotse extends StatelessWidget {
@@ -6,28 +9,33 @@ class AddNotse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: const Column(
-        children: [
-          SizedBox(
-            height: 32,
-          ),
-          Customtextfiles(
-            hitText: "Title",
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Customtextfiles(
-            hitText: "Contents",
-            maxLines: 5,
-          ),
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: const Column(
+          children: [
             SizedBox(
-            height: 16,
-          ),
-          
-        ],
+              height: 32,
+            ),
+            Customtextfiles(
+              hitText: "Title",
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Customtextfiles(
+              hitText: "Content",
+              maxLines: 5,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Custombatten(),
+            SizedBox(
+              height: 16,
+            ),
+          ],
+        ),
       ),
     );
   }

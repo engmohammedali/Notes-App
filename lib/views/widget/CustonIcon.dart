@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Custonserch extends StatelessWidget {
-  const Custonserch({super.key});
+// ignore: must_be_immutable
+class CustonIcon extends StatelessWidget {
+  var icon;
+  CustonIcon({super.key, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,8 @@ class Custonserch extends StatelessWidget {
         child: Center(
             child: IconButton(
                 onPressed: () {},
-                icon: const Icon(
-                  Icons.search,
+                icon: Icon(
+                  icon,
                   size: 28,
                 ))));
   }

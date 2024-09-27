@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:notesapp/views/widget/CustonSerch.dart';
+import 'package:notesapp/views/widget/CustonIcon.dart';
+
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Text("Notes",
             style: TextStyle(
               fontSize: 28,
             )),
         Spacer(),
-        Custonserch()
+        CustonIcon(
+          icon: Icons.search,
+        )
       ],
     );
   }
