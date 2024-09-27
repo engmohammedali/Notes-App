@@ -9,6 +9,7 @@ class Customtextfiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: TextStyle(color: mainColor),
       maxLines: maxLines,
       cursorColor: mainColor,
       decoration: InputDecoration(
