@@ -7,6 +7,23 @@ class Editviewbody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return AddNotesForm();
+  }
+}
+
+class AddNotesForm extends StatefulWidget {
+  const AddNotesForm({
+    super.key,
+  });
+
+  @override
+  State<AddNotesForm> createState() => _AddNotesFormState();
+}
+
+class _AddNotesFormState extends State<AddNotesForm> {
+  String? title, content;
+  @override
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
         padding: EdgeInsets.symmetric(

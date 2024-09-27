@@ -11,32 +11,61 @@ class AddNotse extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: const Column(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: const AddFormnots()),
+    );
+  }
+}
+
+class AddFormnots extends StatefulWidget {
+  const AddFormnots({super.key});
+
+  @override
+  State<AddFormnots> createState() => _AddnotsState();
+}
+
+class _AddnotsState extends State<AddFormnots> {
+  GlobalKey<FormState> formKey = GlobalKey();
+  String? title, content;
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+        key: formKey,
+        child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             Customtextfiles(
               hitText: "Title",
+              onSaved: (value) {
+                title = value;
+              },
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Customtextfiles(
               hitText: "Content",
               maxLines: 5,
+              onSaved: (value) {
+                content = value;
+              },
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
-            Custombatten(),
-            SizedBox(
+            Custombatten(
+              onTap: () {
+                if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
+                }
+              },
+            ),
+            const SizedBox(
               height: 16,
             ),
           ],
-        ),
-      ),
-    );
+        ));
   }
 }

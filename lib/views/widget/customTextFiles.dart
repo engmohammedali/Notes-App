@@ -4,11 +4,19 @@ import 'package:notesapp/views/widget/const.dart';
 class Customtextfiles extends StatelessWidget {
   final String hitText;
   final int? maxLines;
-  const Customtextfiles({super.key, required this.hitText, this.maxLines = 1});
+  void Function(String?)? onSaved;
+  Customtextfiles(
+      {super.key, required this.hitText, this.maxLines = 1, this.onSaved});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return "Filed is required";
+        }
+      },
+      onSaved: onSaved,
       style: TextStyle(color: mainColor),
       maxLines: maxLines,
       cursorColor: mainColor,
