@@ -35,8 +35,26 @@ class _ItemsState extends State<Items> {
               itemBuilder: (context, int index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Notsitems(
-                    note: notes[index],
+                  child: Dismissible(
+                    key: Key(notes[index].title),
+                    onDismissed: (direction) {
+                      notes[index].delete();
+                      BlocProvider.of<NotesCubit>(context).fetchNotesCubit();
+                    },
+                    background: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(15)),
+                      alignment: Alignment.center,
+                      child: const Icon(
+                        Icons.delete,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                    child: Notsitems(
+                      note: notes[index],
+                    ),
                   ),
                 );
               });
