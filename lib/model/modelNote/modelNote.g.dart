@@ -17,7 +17,7 @@ class ModelNoteAdapter extends TypeAdapter<ModelNote> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return ModelNote(
-      context: fields[1] as String,
+      content: fields[1] as String,
       dateTime: fields[2] as String,
       title: fields[0] as String,
       color: fields[3] as int,
@@ -31,7 +31,7 @@ class ModelNoteAdapter extends TypeAdapter<ModelNote> {
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
-      ..write(obj.context)
+      ..write(obj.content)
       ..writeByte(2)
       ..write(obj.dateTime)
       ..writeByte(3)

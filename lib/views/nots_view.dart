@@ -13,6 +13,7 @@ class NotsView extends StatelessWidget {
         backgroundColor: mainColor,
         onPressed: () {
           showModalBottomSheet(
+              isScrollControlled: true,
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),

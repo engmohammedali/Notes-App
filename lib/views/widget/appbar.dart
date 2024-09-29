@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notesapp/views/widget/CustonIcon.dart';
+import 'package:notesapp/views/widget/CustomIcon.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -13,7 +13,7 @@ class MyAppBar extends StatelessWidget {
               fontSize: 28,
             )),
         const Spacer(),
-        CustonIcon(
+        Customicon(
           icon: Icons.search,
         )
       ],

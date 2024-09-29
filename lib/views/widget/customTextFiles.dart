@@ -5,12 +5,18 @@ class Customtextfiles extends StatelessWidget {
   final String hitText;
   final int? maxLines;
   void Function(String?)? onSaved;
+  void Function(String)? onChanged;
   Customtextfiles(
-      {super.key, required this.hitText, this.maxLines = 1, this.onSaved});
+      {super.key,
+      required this.hitText,
+      this.maxLines = 1,
+      this.onSaved,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return "Filed is required";

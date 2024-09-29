@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class CustonIcon extends StatelessWidget {
+class Customicon extends StatelessWidget {
   var icon;
-  CustonIcon({super.key, required this.icon});
+  void Function()? onPressed;
+  Customicon({super.key, required this.icon, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CustonIcon extends StatelessWidget {
             borderRadius: BorderRadius.circular(16)),
         child: Center(
             child: IconButton(
-                onPressed: () {},
+                onPressed: onPressed,
                 icon: Icon(
                   icon,
                   size: 28,
